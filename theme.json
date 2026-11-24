@@ -1,0 +1,95 @@
+{
+  "name": "Dafy Whale",
+  "seeds": {
+    "light": {
+      "bgTop": "#f3f9fe",
+      "bgMid": "#eaf3fc",
+      "bgLow": "#e4f0fa",
+      "bgBottom": "#e0edf9",
+      "bgTint": "#dce9f880",
+      "text": "#0e2a5c",
+      "textMuted": "#45678f",
+      "textFaint": "#6a88ad",
+      "iconMuted": "#5f7fa6",
+      "emptyMark": "#7fa3cc",
+      "busy": "#1f9d72",
+      "attention": "#b97a1e",
+      "done": "#4f7fd0",
+      "exited": "#9fb4cc",
+      "danger": "#d6456d",
+      "accent": "#3b62f6",
+      "accentHover": "#3558dd",
+      "accentPressed": "#2f4fc8",
+      "accentText": "#ffffff",
+      "panel": "#ffffff",
+      "field": "#f3f9fe",
+      "fieldBorder": "#c6dcf2",
+      "surface": "#ffffff",
+      "surfaceHover": "#e0edf9",
+      "surfacePressed": "#c6dcf2",
+      "card": "#ffffffa8",
+      "cardFocused": "#fffffff2",
+      "shadow": "#1450b412",
+      "shadowFocused": "#1450b41f",
+      "backdrop": "#0a285c14",
+      "pillTint": "#0e2a5c40"
+    },
+    "dark": {
+      "bgTop": "#0f1e38",
+      "bgMid": "#0d1a32",
+      "bgLow": "#0b1630",
+      "bgBottom": "#0a1428",
+      "bgTint": "#0c183040",
+      "text": "#dcebff",
+      "textMuted": "#8fb0dc",
+      "textFaint": "#6a89b5",
+      "iconMuted": "#7c9cc8",
+      "emptyMark": "#5c7ba8",
+      "busy": "#4bc49b",
+      "attention": "#e8b45a",
+      "done": "#7aa8f0",
+      "exited": "#4a6285",
+      "danger": "#ff7a93",
+      "accent": "#6c8cff",
+      "accentHover": "#829dff",
+      "accentPressed": "#5a7aef",
+      "accentText": "#0a1428",
+      "panel": "#13233f",
+      "field": "#0b1830",
+      "fieldBorder": "#2b4a78",
+      "surface": "#13233f",
+      "surfaceHover": "#1b3053",
+      "surfacePressed": "#243c64",
+      "card": "#0a142880",
+      "cardFocused": "#13233ff0",
+      "shadow": "#00000040",
+      "shadowFocused": "#00000066",
+      "backdrop": "#00000033",
+      "pillTint": "#00000000"
+    }
+  },
+  "roles": {
+    "sideBar.tabActiveBackground": { "light": "#ffffffeb", "dark": "#6c8cff2e" },
+    "sideBar.tabHoverBackground": { "light": "#3b62f614", "dark": "#6c8cff1a" },
+    "sideBar.tabSeparator": { "light": "#9fc3e840", "dark": "#1d3252" }
+  },
+  "terminal": { "light": "Nord Light", "dark": "Night Owl" },
+  "assets": {
+    "whale": "whale_front.png",
+    "side": "whale_side.png",
+    "fish": "fish_idle.png",
+    "fishHappy": "fish_happy.png",
+    "logo": "logo.svg"
+  },
+  "ambience": {
+    "glows": [
+      { "x": 0.88, "y": -0.08, "rx": 0.55, "ry": 0.5, "color": { "light": "#3b62f64d", "dark": "#6c8cff33" } },
+      { "x": -0.06, "y": 1.08, "rx": 0.45, "ry": 0.5, "color": { "light": "#57c7e842", "dark": "#57c7e82e" } },
+      { "x": 0.5, "y": 0.46, "rx": 0.3, "ry": 0.3, "color": { "light": "#2fd0b524", "dark": "#2fd0b51f" } }
+    ],
+    "images": [
+      { "asset": "side", "anchor": "bottomRight", "height": 0.74, "opacity": 0.1 }
+    ]
+  },
+  "brand": { "icon": "logo", "wordmark": "Dafy Whale" }
+}
