@@ -1,0 +1,113 @@
+package main
+
+// Dafy Whale's window background: the seed gradient, three sea-surface
+// glows and the whale watermark at the bottom right. It is the look the
+// built-in ambience drew, as a theme shader of API version 2. It reads no
+// Time: it is a still shader and asks for no frames.
+
+var SeedBgTop, SeedBgMid, SeedBgLow, SeedBgBottom, SeedBgTint vec4
+var Origin, Window vec2
+
+// Center of the blue glow, x as a fraction of the window's width.
+//gorex:param number 0.88 -1 2
+var Glow1X float
+
+// Center of the blue glow, y as a fraction of the window's height.
+//gorex:param number -0.08 -1 2
+var Glow1Y float
+
+// Radius of the blue glow, x as a fraction of the window's width.
+//gorex:param number 0.55 0 2
+var Glow1RX float
+
+// Radius of the blue glow, y as a fraction of the window's height.
+//gorex:param number 0.5 0 2
+var Glow1RY float
+
+// Color of the blue glow, upper right.
+//gorex:param color #3b62f64d/#6c8cff33
+var Glow1C vec4
+
+// Center of the cyan glow, x as a fraction of the window's width.
+//gorex:param number -0.06 -1 2
+var Glow2X float
+
+// Center of the cyan glow, y as a fraction of the window's height.
+//gorex:param number 1.08 -1 2
+var Glow2Y float
+
+// Radius of the cyan glow, x as a fraction of the window's width.
+//gorex:param number 0.45 0 2
+var Glow2RX float
+
+// Radius of the cyan glow, y as a fraction of the window's height.
+//gorex:param number 0.5 0 2
+var Glow2RY float
+
+// Color of the cyan glow, lower left.
+//gorex:param color #57c7e842/#57c7e82e
+var Glow2C vec4
+
+// Center of the teal glow, x as a fraction of the window's width.
+//gorex:param number 0.5 -1 2
+var Glow3X float
+
+// Center of the teal glow, y as a fraction of the window's height.
+//gorex:param number 0.46 -1 2
+var Glow3Y float
+
+// Radius of the teal glow, x as a fraction of the window's width.
+//gorex:param number 0.3 0 2
+var Glow3RX float
+
+// Radius of the teal glow, y as a fraction of the window's height.
+//gorex:param number 0.3 0 2
+var Glow3RY float
+
+// Color of the teal glow, middle.
+//gorex:param color #2fd0b524/#2fd0b51f
+var Glow3C vec4
+
+// Opacity of the whale watermark, bottom right.
+//gorex:param number 0.1 0 1
+var WhaleOpacity float
+
+// glow lays one elliptical glow over c at the window fraction p: the
+// color at its center, clear at its edge, as the radial gradients of the
+// built-in ambience drew.
+func glow(c vec3, p vec2, cx, cy, rx, ry float, col vec4) vec3 {
+	if rx <= 0 || ry <= 0 {
+		return c
+	}
+	d := length(vec2((p.x-cx)/rx, (p.y-cy)/ry))
+	return mix(c, col.rgb, col.a*clamp(1-d, 0, 1))
+}
+
+func Fragment(dst vec4, pos vec2) vec4 {
+	// The seed gradient, as the built-in background draws it: four stops
+	// at 38% and 70% of the height, and the tint from 35% of the width.
+	size := rectSize()
+	y := pos.y / size.y
+	c := mix(SeedBgTop.rgb, SeedBgMid.rgb, clamp(y/0.38, 0, 1))
+	c = mix(c, SeedBgLow.rgb, clamp((y-0.38)/0.32, 0, 1))
+	c = mix(c, SeedBgBottom.rgb, clamp((y-0.7)/0.3, 0, 1))
+	a := SeedBgTint.a * clamp((pos.x/size.x-0.35)/0.65, 0, 1)
+	c = mix(c, SeedBgTint.rgb, a)
+
+	p := (pos + Origin) / Window
+	c = glow(c, p, Glow1X, Glow1Y, Glow1RX, Glow1RY, Glow1C)
+	c = glow(c, p, Glow2X, Glow2Y, Glow2RX, Glow2RY, Glow2C)
+	c = glow(c, p, Glow3X, Glow3Y, Glow3RX, Glow3RY, Glow3C)
+
+	// The whale, anchored bottom right, 0.74 of the window's height tall
+	// and its own aspect wide, at the watermark's alpha.
+	h := 0.74 * Window.y
+	isz := image0Size()
+	w := isz.x * h / isz.y
+	q := pos + Origin - (Window - vec2(w, h))
+	if q.x >= 0 && q.y >= 0 && q.x < w && q.y < h {
+		s := image0Sample(q * isz.y / h)
+		c = mix(c, s.rgb, s.a*WhaleOpacity)
+	}
+	return vec4(c, 1)
+}

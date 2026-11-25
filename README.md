@@ -5,13 +5,18 @@ A blue ocean theme for [GoRex](https://github.com/si-mods/gorex), in light and d
 It has:
 
 - an ocean palette for the window (the 31 GoRex seeds, light and dark),
+- three sea-surface glows and a whale watermark, drawn by the pack's own background shader (`assets/whale_bg.kage`, a GoRex shader API 2 `background` slot),
 - the terminal colors "Nord Light" and "Night Owl" (used when you have not set `terminal.theme`).
 
-## Glows, watermark and brand row
+The shader needs GoRex v0.62.0 or newer. On an older build the pack still loads as the palette and the terminal colors, with a warning about the shader keys.
 
-Earlier versions of this pack had sea-surface glows, a whale-girl watermark and a brand row. GoRex removed those built-in looks: a theme now draws its background with its own shader (GoRex `docs/DSK-012`). This version has only the palette and the terminal colors. A later version can draw the glows and the watermark with a theme shader.
+## Glow positions, sizes and colors
 
-The earlier images and their licenses are in the git history (commit `da1d34e`).
+The shader declares each glow's center, radii and color, and the watermark's opacity, as `//gorex:param` uniforms. `theme.json` sets them to the source theme's values; a fork can tune them in `shaders.background.params` without touching the shader.
+
+## Brand row, mascot and sprites
+
+Earlier versions of this pack had a brand row, a whale mascot and fish sprites, which GoRex's built-in layers drew. GoRex removed those built-in looks (GoRex `docs/DSK-012`): a theme now draws its background with its own shader, and the mascot and sprites are out of scope. The earlier images and their licenses are in the git history (commit `da1d34e`).
 
 ## Install
 

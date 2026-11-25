@@ -73,5 +73,25 @@
     "sideBar.tabHoverBackground": { "light": "#3b62f614", "dark": "#6c8cff1a" },
     "sideBar.tabSeparator": { "light": "#9fc3e840", "dark": "#1d3252" }
   },
-  "terminal": { "light": "Nord Light", "dark": "Night Owl" }
+  "terminal": { "light": "Nord Light", "dark": "Night Owl" },
+  "assets": {
+    "side": "whale_side.png",
+    "bg": "whale_bg.kage"
+  },
+  "shaders": {
+    "api": 2,
+    "background": {
+      "source": "bg",
+      "images": ["side"],
+      "params": {
+        "Glow1X": 0.88, "Glow1Y": -0.08, "Glow1RX": 0.55, "Glow1RY": 0.5,
+        "Glow1C": { "light": "#3b62f64d", "dark": "#6c8cff33" },
+        "Glow2X": -0.06, "Glow2Y": 1.08, "Glow2RX": 0.45, "Glow2RY": 0.5,
+        "Glow2C": { "light": "#57c7e842", "dark": "#57c7e82e" },
+        "Glow3X": 0.5, "Glow3Y": 0.46, "Glow3RX": 0.3, "Glow3RY": 0.3,
+        "Glow3C": { "light": "#2fd0b524", "dark": "#2fd0b51f" },
+        "WhaleOpacity": 0.1
+      }
+    }
+  }
 }
