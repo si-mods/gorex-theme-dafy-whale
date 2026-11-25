@@ -1,17 +1,26 @@
 Dafy Whale: credits and licenses
 
-The theme file (theme.json) and this repository's text are the work of this
-repository and use the MIT license in LICENSE.
+The theme file (theme.json), the shader (assets/whale_bg.kage) and this
+repository's text are the work of this repository and use the MIT license
+in LICENSE. The other file under assets/ comes from the source below and
+keeps its own license.
 
 This pack is a port of a community theme. It is not made, endorsed or
 approved by DeepSeek or by any author named below.
 
-Colors
+1. Colors and ambience design
    Ported from "dafy-whale-theme" by DViridescent (GitHub handle)
    https://github.com/DViridescent/dafy-whale-theme
    License: MIT, Copyright (c) 2026 dafy-whale-theme contributors.
-   The palette values follow that theme. They are re-expressed as GoRex
-   seeds, and the light and dark values are adjusted to GoRex's roles.
+   The palette values, the glow layout and the watermark settings follow
+   that theme. They are re-expressed as GoRex seeds and a theme shader,
+   and the light and dark values are adjusted to GoRex's roles.
 
-Earlier versions of this pack also carried whale and fish images from other
-projects, with their own licenses. This version does not include them.
+2. Whale image: assets/whale_side.png
+   From https://github.com/1190fasheqi/dafeiyu-pet (handle: 1190fasheqi)
+   License: MIT. The license text is in LICENSE-whale.txt.
+   The file is used as it is, with no change.
+
+Earlier versions of this pack also carried a second whale image, fish
+images and an SVG logo from other projects, with their own licenses. This
+version does not include them.
