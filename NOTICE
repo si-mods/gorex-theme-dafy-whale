@@ -1,37 +1,17 @@
 Dafy Whale: credits and licenses
 
-The theme file (theme.json), assets/logo.svg and this repository's text are the
-work of this repository and use the MIT license in LICENSE. The other files
-under assets/ come from the sources below and keep their own licenses.
+The theme file (theme.json) and this repository's text are the work of this
+repository and use the MIT license in LICENSE.
 
 This pack is a port of a community theme. It is not made, endorsed or
 approved by DeepSeek or by any author named below.
 
-1. Colors and ambience design
+Colors
    Ported from "dafy-whale-theme" by DViridescent (GitHub handle)
    https://github.com/DViridescent/dafy-whale-theme
    License: MIT, Copyright (c) 2026 dafy-whale-theme contributors.
-   The palette values, the glow layout and the watermark settings follow that
-   theme. They are re-expressed as GoRex seeds and ambience data, and the
-   light and dark values are adjusted to GoRex's roles.
+   The palette values follow that theme. They are re-expressed as GoRex
+   seeds, and the light and dark values are adjusted to GoRex's roles.
 
-2. Whale images: assets/whale_front.png, assets/whale_side.png
-   From https://github.com/1190fasheqi/dafeiyu-pet (handle: 1190fasheqi)
-   License: MIT. The license text is in LICENSE-whale.txt.
-   The files are used as they are, with no change.
-
-3. Fish images: assets/fish_idle.png, assets/fish_happy.png
-   Author: YunYueSama
-   Repository: https://github.com/YunYueSama/codex-deepseek-pet
-   License: Dafy Fish Project Attribution License 1.0 ("大肥鱼项目署名许可 1.0").
-   The full, unchanged license text is in LICENSE-fish.txt.
-   These files are MODIFIED: each was scaled down from 768x832 px to 236x256 px
-   (Lanczos resampling) and saved again as PNG. They are not the original work
-   of the author, and the author did not make the changes.
-   That license covers only what the author has the right to license. It does
-   not cover the underlying character design, which comes from community
-   references, and it does not mean that DeepSeek approves it. If a rights
-   holder objects, the files will be removed.
-
-Not included: the "meme" picture, the DeepSeek-girl GIFs and the DeepSeek logo
-of the source theme. This pack does not ship them and does not fetch them.
+Earlier versions of this pack also carried whale and fish images from other
+projects, with their own licenses. This version does not include them.

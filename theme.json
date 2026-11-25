@@ -73,23 +73,5 @@
     "sideBar.tabHoverBackground": { "light": "#3b62f614", "dark": "#6c8cff1a" },
     "sideBar.tabSeparator": { "light": "#9fc3e840", "dark": "#1d3252" }
   },
-  "terminal": { "light": "Nord Light", "dark": "Night Owl" },
-  "assets": {
-    "whale": "whale_front.png",
-    "side": "whale_side.png",
-    "fish": "fish_idle.png",
-    "fishHappy": "fish_happy.png",
-    "logo": "logo.svg"
-  },
-  "ambience": {
-    "glows": [
-      { "x": 0.88, "y": -0.08, "rx": 0.55, "ry": 0.5, "color": { "light": "#3b62f64d", "dark": "#6c8cff33" } },
-      { "x": -0.06, "y": 1.08, "rx": 0.45, "ry": 0.5, "color": { "light": "#57c7e842", "dark": "#57c7e82e" } },
-      { "x": 0.5, "y": 0.46, "rx": 0.3, "ry": 0.3, "color": { "light": "#2fd0b524", "dark": "#2fd0b51f" } }
-    ],
-    "images": [
-      { "asset": "side", "anchor": "bottomRight", "height": 0.74, "opacity": 0.1 }
-    ]
-  },
-  "brand": { "icon": "logo", "wordmark": "Dafy Whale" }
+  "terminal": { "light": "Nord Light", "dark": "Night Owl" }
 }
